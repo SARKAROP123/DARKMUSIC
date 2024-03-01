@@ -16,14 +16,14 @@ def f_sudo_filter(filt, client, message):
     )
 
 
-sudo_filter = filters.create(func=f_sudo_filter, name="SudoFilter")
+sudo_filter = filters.create(func=f_sudo_filter, name="OwnFilter")
 
 
 def onw_filter(filt, client, message):
     if USE_AS_BOT:
         return bool(
             True
-            and  # message.from_user.id in SUDO_USERS
+            and  # message.from_user.id in Own_USERS
             # t, lt, fl 2013
             not message.edit_date
         )
